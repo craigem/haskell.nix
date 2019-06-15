@@ -4,7 +4,7 @@
       packages = {
         "binary".revision = (((hackage."binary")."0.8.5.1").revisions).default;
         "ghc-prim".revision = (((hackage."ghc-prim")."0.5.2.0").revisions).default;
-        "extra".revision = (((hackage."extra")."1.6.15").revisions).default;
+        "extra".revision = (((hackage."extra")."1.6.17").revisions).default;
         "stm".revision = (((hackage."stm")."2.4.5.1").revisions).default;
         "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
         "rts".revision = (((hackage."rts")."1.0").revisions).default;
@@ -62,8 +62,8 @@
         "bytestring".revision = (((hackage."bytestring")."0.10.8.2").revisions).default;
         "ansi-wl-pprint".revision = (((hackage."ansi-wl-pprint")."0.6.9").revisions).default;
         "ansi-wl-pprint".flags.example = false;
-        "StateVar".revision = (((hackage."StateVar")."1.1.1.1").revisions).default;
-        "contravariant".revision = (((hackage."contravariant")."1.5.1").revisions).default;
+        "StateVar".revision = (((hackage."StateVar")."1.2").revisions).default;
+        "contravariant".revision = (((hackage."contravariant")."1.5.2").revisions).default;
         "contravariant".flags.semigroups = true;
         "contravariant".flags.tagged = true;
         "contravariant".flags.statevar = true;
