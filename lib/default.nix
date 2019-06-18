@@ -89,8 +89,15 @@ with haskellLib;
     let
       makePairs = map (p: rec { key="${val}"; val=(p.components.library or p); });
       closure = builtins.genericClosure {
-        startSet = makePairs component.depends;
-        operator = {val,...}: makePairs val.config.depends;
+        startSet = makePairs (configDepends component);
+        operator = {val,...}: makePairs (configDepends val.config);
       };
+      configDepends = cfg: cfg.depends ++
+        (lib.concatMap (c: if c.isHaskell or false
+          # attempt 1: add exe components -- but they do not have package.conf.d
+          # then builtins.attrValues (c.components.exes or {})
+          # attempt 2: add library -- no, cabal wants an exe component
+          then [c.components.library]
+          else []) cfg.build-tools);
     in map ({val,...}: val) closure;
 }
