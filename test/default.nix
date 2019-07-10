@@ -19,7 +19,7 @@ in pkgs.recurseIntoAttrs {
   snapshots = haskell.callPackage ./snapshots {};
   shell-for = haskell.callPackage ./shell-for {};
   # callStackToNix = haskell.callPackage ./callStackToNix {};
-  # callCabalProjectToNix = haskell.callPackage ./call-cabal-project-to-nix {};
+  callCabalProjectToNix = haskell.callPackage ./call-cabal-project-to-nix {};
 
   # Run unit tests with: nix-instantiate --eval --strict -A unit.tests
   # An empty list means success.
